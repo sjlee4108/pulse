@@ -1,10 +1,11 @@
-//import 'dart:async';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'party.dart';
 import 'PartyForm.dart';
 import 'package:firebase_database/firebase_database.dart';
+//import 'da'
 
-final reference = FirebaseDatabase.instance.reference().child('Parties');
+final reference = FirebaseDatabase.instance.reference();
 
 
 
@@ -33,6 +34,17 @@ class BuildPartiesState extends State<BuildParties> {
       "Jason's Party", "Foss", ["Hangang", "Break Bread"], 'pig', false);
   Party p2 = new Party(
       "Arthur's Party", "Mary Low", ["Sleep", "until 4"], 'cat', true);
+
+
+
+//  toJson() {
+////    return {
+//////      "weight": weight,
+//////      "date": dateTime.millisecondsSinceEpoch,
+//////      "note": note
+////    };
+//  }
+
   List<Party> parties = [this.p1, this.p2];
   final _biggerFont = const TextStyle(fontSize: 18.0);
 
@@ -74,6 +86,9 @@ class BuildPartiesState extends State<BuildParties> {
 //  }
 
   Widget _buildPartyList() {
+    
+
+
     return new ListView.builder(
         padding: const EdgeInsets.all(16.0),
         itemBuilder: (context, i) {
