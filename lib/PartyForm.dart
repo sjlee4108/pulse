@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
+
+final reference = FirebaseDatabase.instance.reference().child('Parties');
 
 class MyForm extends StatefulWidget {
   @override
@@ -67,7 +70,7 @@ class MyFormState extends State<MyForm> {
                   return 'Please enter some text';
                 }
                 else {
-                  this.partyName = value;
+                  this.password = value;
                 }
               },
             ),
@@ -81,6 +84,10 @@ class MyFormState extends State<MyForm> {
                 // the form is invalid.
                 if (_formKey.currentState.validate()) {
                   // If the form is ;p
+                  reference.push().set({
+                    "Party" : this.partyName,
+                    "Password": this.password,
+                  });
                   Navigator.pop(context);
                 }
               },

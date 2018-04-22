@@ -1,6 +1,12 @@
+//import 'dart:async';
 import 'package:flutter/material.dart';
 import 'party.dart';
 import 'PartyForm.dart';
+import 'package:firebase_database/firebase_database.dart';
+
+final reference = FirebaseDatabase.instance.reference().child('Parties');
+
+
 
 void main() => runApp(new Home());
 
