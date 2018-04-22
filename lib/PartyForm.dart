@@ -85,10 +85,14 @@ class MyFormState extends State<MyForm> {
                 if (_formKey.currentState.validate()) {
                   // If the form is ;p
                   Navigator.pop(context);
-                  reference.push().set({
-                    "Party" : this.partyName,
+                  reference.child(this.partyName).set({
                     "Password": this.password,
                   });
+
+//                  reference.push().set({
+//                    "Party" : this.partyName,
+//                    "Password": this.password,
+//                  });
                 }
               },
               child: new Text('Submit'),

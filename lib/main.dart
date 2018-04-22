@@ -96,13 +96,9 @@ class BuildPartiesState extends State<BuildParties> {
 
       onTap: () {
         _openPlaylist(p.p_playlist);
-        //password verification method call
       },
     );
   }
-
-  //verification method here
-
 
   void _openPlaylist(List<String> playlist) {
     Navigator.of(context).push(
