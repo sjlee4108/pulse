@@ -84,11 +84,11 @@ class MyFormState extends State<MyForm> {
                 // the form is invalid.
                 if (_formKey.currentState.validate()) {
                   // If the form is ;p
+                  Navigator.pop(context);
                   reference.push().set({
                     "Party" : this.partyName,
                     "Password": this.password,
                   });
-                  Navigator.pop(context);
                 }
               },
               child: new Text('Submit'),
