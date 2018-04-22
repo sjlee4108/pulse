@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'party.dart';
 import 'PartyForm.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 void main() => runApp(new Home());
 
@@ -23,12 +24,19 @@ class BuildParties extends StatefulWidget {
 }
 
 class BuildPartiesState extends State<BuildParties> {
+
+//  final reference = FirebaseDatabase.instance.reference().child('messages');
+//
+//  reference.push().set({'PLEASE FUCKING WORK':'adsfasdf'});
   Party p1 = new Party(
       "Jason's Party", "Foss", ["Hangang", "Break Bread"], 'pig', false);
+
   Party p2 = new Party(
       "Arthur's Party", "Mary Low", ["Sleep", "until 4"], 'cat', true);
+
   List<Party> parties = [this.p1, this.p2];
   final _biggerFont = const TextStyle(fontSize: 18.0);
+
 
   @override
   Widget build(BuildContext context) {
@@ -68,9 +76,12 @@ class BuildPartiesState extends State<BuildParties> {
 //  }
 
   Widget _buildPartyList() {
+
     return new ListView.builder(
+
         padding: const EdgeInsets.all(16.0),
         itemBuilder: (context, i) {
+
           if (i.isOdd) return new Divider();
 
           final index = i ~/ 2;
